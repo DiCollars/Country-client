@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Client.Models.Country>
+@{
+    ViewData["Title"] = "Data from data base";
+}
+<a href="~/Home/Search">Search country with name.</a>
+
+@foreach (var country in Model)
+{
+    <hr />
+    <p>@country.Name &nbsp; @country.Code &nbsp; @country.Capital.Name &nbsp; @country.Area &nbsp;  @country.Population &nbsp; @country.Region.Name</p>
+    <hr />
+}

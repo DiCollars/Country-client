@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Countries</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+    <div class="border border-dark rounded mx-auto mt-3" style="width:60%">
+        <div class="d-flex mx-3 mt-3 mb-3">
+            <img src="~/globe-internet-computer-icons-globe.jpg" width="50" height="50">
+            <p class="h1">&nbsp;Country information</p>
+        </div>
+
+        <div class="pb-3 border rounded border-dark mx-2 mt-3 mb-2">
+            <main role="main" class="mx-3 mt-3 mb-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

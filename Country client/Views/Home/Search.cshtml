@@ -1,0 +1,35 @@
+﻿@model Client.Models.Country
+@{
+    ViewData["Title"] = "Search";
+}
+<a href="~/Home/Display">Display information from data base.</a>
+<form method="post">
+    <table>
+        <tr>
+            <td>Name:&nbsp;</td>
+            <td><input type="text" name="request" /> <input type="submit" value="Send" /></td>
+        </tr>
+
+    </table>
+</form>
+
+@if (Model != default)
+{
+    <hr />
+    <p>
+        @Model.Name &nbsp; @Model.Code &nbsp; @Model.Capital.Name &nbsp; @Model.Area &nbsp;  @Model.Population &nbsp; @Model.Region.Name
+        <form action="/Home/AddData" method="post">
+            <input hidden type="text" name="name" value=@Model.Name />
+            <input hidden type="text" name="code" value=@Model.Code />
+            <input hidden type="text" name="capital" value=@Model.Capital.Name />
+            <input hidden type="text" name="area" value=@Model.Area />
+            <input hidden type="text" name="population" value=@Model.Population />
+            <input hidden type="text" name="region" value=@Model.Region.Name />
+            <input type="submit" value="Add" />
+        </form>
+        <a href="~/Home/Search">Back</a>
+    </p>
+}
+<p>@ViewBag.Message</p>
+
+
